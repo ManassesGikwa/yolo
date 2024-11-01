@@ -7,13 +7,13 @@
 #To launch this app without having to clone the entire repository,use the docker-compose.yaml file to run the app
 
 
-version: "3.18"
+version: "3.8"
 
 services:
 
   #Builds the frontend Docker image and creates the frontend microservice
   manasses-client:
-    image: manassesgikwa/manasses-client:v1.0.0
+    image: manassesg/yolo-client:latest
     build: ./client
     container_name: manasses-client
     stdin_open: true
@@ -27,7 +27,7 @@ services:
 
   #Builds the backend Docker image and creates the backend microservice
   manasses-backend:
-    image: manassesgikwa/manasses-backend:v1.0.0
+    image: manassesg/yolo-backend:latest
     build: ./backend
     container_name: manasses-backend
     stdin_open: true
