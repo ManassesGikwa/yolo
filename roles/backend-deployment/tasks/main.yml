@@ -1,16 +1,17 @@
 ---
 - name: Pull image from repository
   docker_image:
-    name: brianbwire/brian-yolo-backend:v1.0.0
+    name: manassesg/yolo-backend:latest
     source: pull
 
 - name: Create Node.js Backend Container
   docker_container:
-    name: brian-yolo-backend
-    image: brianbwire/brian-yolo-backend:v1.0.0
+    name: knowen-yolo-backend
+    image: manassesg/yolo-backend:latest
     networks:
       - name: app-net
     ports:
       - "5000:5000"
     command: "npm start"
+    restart_policy: unless-stopped
   become: yes
